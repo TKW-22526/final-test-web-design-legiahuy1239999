@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Lịch Hẹn Tư Vấn - Siêu Thị Váy Cưới</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>SIÊU THỊ VÁY CƯỚI</h1></div>
+            <div class="search-bar"><input type="text" placeholder="Tìm kiếm mẫu váy cưới..."><button type="button">Tìm</button></div>
+            <div class="cart-icon">Giỏ hàng (<span id="cart-badge">0</span>)</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li><a href="san-pham.html">Sản phẩm</a></li>
+                <li><a href="chi-tiet.html">Trang chi tiết</a></li>
+                <li><a href="lien-he.html" class="active">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">Đặt Lịch Hẹn Thử Váy</h2>
+        <div class="content-box" style="max-width: 600px; margin: 0 auto;">
+            <form action="#" onsubmit="event.preventDefault(); alert('Gửi yêu cầu đặt lịch hẹn thành công!');">
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:bold;">Họ và tên Cô Dâu / Chú Rể</label>
+                    <input type="text" placeholder="Nhập họ tên đầy đủ..." style="width:100%; padding:10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:bold;">Số điện thoại liên hệ</label>
+                    <input type="tel" placeholder="Nhập số điện thoại..." style="width:100%; padding:10px; border: 1px solid #ccc; border-radius: 4px;" required>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom:8px; font-weight:bold;">Yêu cầu hoặc Dòng váy quan tâm</label>
+                    <textarea rows="4" placeholder="Ví dụ: Tư vấn gói thuê váy ngày 18/10..." style="width:100%; padding:10px; border: 1px solid #ccc; border-radius: 4px;" required></textarea>
+                </div>
+                <button type="submit" style="width: 100%; padding: 12px; background: #d4a373; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer;">Đăng Ký Đặt Lịch</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom"><p>&copy; 2026 Siêu Thị Váy Cưới. All Rights Reserved.</p></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+            document.getElementById('cart-badge').textContent = cartCount;
+        });
+    </script>
+</body>
+</html>

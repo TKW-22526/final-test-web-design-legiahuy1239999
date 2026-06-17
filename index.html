@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siêu Thị Váy Cưới - Trang Chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Tối ưu riêng cho phần banner chữ đen rực rỡ sang trọng */
+        .banner {
+            background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)), url('assets/IMG_9744.jpg') no-repeat center center/cover;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #b39359;
+        }
+        .banner-content h2 {
+            color: #000000 !important; /* Đổi hẳn sang chữ màu đen */
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .banner-content p {
+            color: #000000 !important; /* Chữ nhỏ bên dưới màu đen luôn */
+            font-size: 18px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>SIÊU THỊ VÁY CƯỚI</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm mẫu váy cưới...">
+                <button type="button">Tìm</button>
+            </div>
+            <div class="cart-icon" style="cursor: pointer;">
+                Giỏ hàng (<span id="cart-badge">0</span>)
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Trang chủ</a></li>
+                <li><a href="html/gioi-thieu.html">Giới thiệu</a></li>
+                <li><a href="html/san-pham.html">Sản phẩm</a></li>
+                <li><a href="html/chi-tiet.html">Trang chi tiết</a></li>
+                <li><a href="html/lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Chắp cánh ngày chung đôi rực rỡ</h2>
+            <p>Khám phá bộ sưu tập váy cưới thiên đường cho ngày trọng đại của bạn</p>
+        </div>
+    </section>
+
+    <main>
+        <h2 class="page-title">Mẫu Thiết Kế Nổi Bật</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/IMG_9746.JPG" alt="Váy Công Chúa Trễ Vai">
+                <div class="product-info">
+                    <h3>Váy Công Chúa Trễ Vai Sparkling</h3>
+                    <p class="product-price">28.500.000 đ</p>
+                    <div class="product-actions">
+                        <button class="btn-cart">Thêm giỏ hàng</button>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="assets/IMG_9745.JPG" alt="Váy Cưới Satin Royal">
+                <div class="product-info">
+                    <h3>Váy Cưới Satin Royal Trễ Vai</h3>
+                    <p class="product-price">24.000.000 đ</p>
+                    <div class="product-actions">
+                        <button class="btn-cart">Thêm giỏ hàng</button>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="assets/IMG_9747.JPG" alt="Váy Cúp Ngực 3D">
+                <div class="product-info">
+                    <h3>Váy Cúp Ngực Đính Hoa 3D</h3>
+                    <p class="product-price">32.000.000 đ</p>
+                    <div class="product-actions">
+                        <button class="btn-cart">Thêm giỏ hàng</button>
+                        <button class="btn-buy">Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Siêu Thị Váy Cưới</h4>
+                <p>Nơi lưu giữ khoảnh khắc hạnh phúc trọn đời của bạn với những thiết kế tinh tế và đẳng cấp nhất.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Thông Tin Liên Hệ</h4>
+                <p><strong>Địa chỉ:</strong> 65 đường Trần Văn Sên, khóm 4, phường Trà Vinh, tỉnh Vĩnh Long</p>
+                <p><strong>Hotline:</strong> 0907674008</p>
+                <p><strong>Email:</strong> giahuydhtv1979@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Giờ Mở Cửa</h4>
+                <p>Thứ 2 - Chủ Nhật: 08:00 - 21:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Siêu Thị Váy Cưới. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+            const badge = document.getElementById('cart-badge');
+            if(badge) badge.textContent = cartCount;
+
+            function addToCart() {
+                cartCount++;
+                localStorage.setItem('cartCount', cartCount);
+                if(badge) badge.textContent = cartCount;
+                alert('Đã thêm mẫu thiết kế này vào giỏ hàng thành công!');
+            }
+
+            document.querySelectorAll('.btn-buy, .btn-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    addToCart();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

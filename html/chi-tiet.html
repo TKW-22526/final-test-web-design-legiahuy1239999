@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Thiết Kế Cao Cấp - Siêu Thị Váy Cưới</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>SIÊU THỊ VÁY CƯỚI</h1></div>
+            <div class="search-bar"><input type="text" placeholder="Tìm kiếm mẫu váy cưới..."><button type="button">Tìm</button></div>
+            <div class="cart-icon">Giỏ hàng (<span id="cart-badge">0</span>)</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li><a href="san-pham.html">Sản phẩm</a></li>
+                <li><a href="chi-tiet.html" class="active">Trang chi tiết</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">Thông Tin Chi Tiết Sản Phẩm</h2>
+        <div class="detail-container" style="display: flex; gap: 40px; background: white; padding: 30px; border-radius: 8px; align-items: center;">
+            <div class="detail-img" style="flex: 1;"><img src="../assets/IMG_9751.jpg" alt="Váy cưới cao cấp" style="width: 100%; border-radius: 8px;"></div>
+            <div class="detail-info" style="flex: 1;">
+                <span style="background: #e63946; color: white; padding: 4px 10px; font-size: 12px; font-weight: bold; border-radius: 4px;">BEST SELLER</span>
+                <h2 style="margin: 10px 0; font-size: 28px; color: #111;">Váy Cưới Thiết Kế Hoàng Gia Royal Premium</h2>
+                <p class="product-price" style="font-size: 26px; color: #e63946; font-weight: bold; margin: 15px 0;">45.000.000 đ</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">Dòng sản phẩm cao cấp bậc nhất sở hữu phom dáng corset siết eo định hình đỉnh cao, đính hoa nổi 3D kết ren hoàng gia Pháp, tạo hiệu ứng lấp lánh hoàn hảo dưới ánh đèn lễ đường.</p>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn-cart" style="padding: 12px 25px; flex: 1; cursor: pointer;">Thêm Vào Giỏ Hàng</button>
+                    <button class="btn-buy" style="padding: 12px 25px; flex: 1; cursor: pointer;">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom"><p>&copy; 2026 Siêu Thị Váy Cưới. All Rights Reserved.</p></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+            const badge = document.getElementById('cart-badge');
+            if(badge) badge.textContent = cartCount;
+
+            document.querySelectorAll('.btn-buy, .btn-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cartCount++;
+                    localStorage.setItem('cartCount', cartCount);
+                    if(badge) badge.textContent = cartCount;
+                    alert('Đã thêm mẫu thiết kế này vào giỏ hàng thành công!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

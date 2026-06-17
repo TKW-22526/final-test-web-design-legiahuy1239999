@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Siêu Thị Váy Cưới</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>SIÊU THỊ VÁY CƯỚI</h1></div>
+            <div class="search-bar"><input type="text" placeholder="Tìm kiếm mẫu váy cưới..."><button type="button">Tìm</button></div>
+            <div class="cart-icon">Giỏ hàng (<span id="cart-badge">0</span>)</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html" class="active">Giới thiệu</a></li>
+                <li><a href="san-pham.html">Sản phẩm</a></li>
+                <li><a href="chi-tiet.html">Trang chi tiết</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">Câu Chuyện Thương Hiệu</h2>
+        <div class="content-box" style="max-width: 900px; margin: 0 auto; text-align: center; line-height: 1.8;">
+            <img src="../assets/IMG_9744.jpg" alt="Không gian váy cưới" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin-bottom: 25px;">
+            <p>Chào mừng bạn đến với <strong>Siêu Thị Váy Cưới</strong> — biểu tượng của sự thanh lịch và tinh tế dành riêng cho các nàng dâu tại Vĩnh Long.</p>
+            <p>Chúng tôi chuyên cung cấp dòng váy cưới thiết kế cao cấp, giúp bạn tỏa sáng lộng lẫy nhất trong ngày chung đôi.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Siêu Thị Váy Cưới. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+            document.getElementById('cart-badge').textContent = cartCount;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Sưu Tập Váy Cưới - Siêu Thị Váy Cưới</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><h1>SIÊU THỊ VÁY CƯỚI</h1></div>
+            <div class="search-bar"><input type="text" placeholder="Tìm kiếm mẫu váy cưới..."><button type="button">Tìm</button></div>
+            <div class="cart-icon">Giỏ hàng (<span id="cart-badge">0</span>)</div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+                <li><a href="san-pham.html" class="active">Sản phẩm</a></li>
+                <li><a href="chi-tiet.html">Trang chi tiết</a></li>
+                <li><a href="lien-he.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">Bộ Sưu Tập Cao Cấp 2026</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="../assets/IMG_9744.jpg" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 1</h3><p class="product-price">25.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9745.JPG" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 2</h3><p class="product-price">24.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9746.JPG" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 3</h3><p class="product-price">28.500.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9747.JPG" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 4</h3><p class="product-price">32.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9748.JPG" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 5</h3><p class="product-price">26.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9749.JPG" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 6</h3><p class="product-price">23.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9750.jpg" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Luxury Vol 7</h3><p class="product-price">27.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+            <div class="product-card">
+                <img src="../assets/IMG_9751.jpg" alt="Váy cưới">
+                <div class="product-info"><h3>Váy Cưới Royal Premium</h3><p class="product-price">45.000.000 đ</p><div class="product-actions"><button class="btn-cart">Thêm giỏ hàng</button><button class="btn-buy">Mua ngay</button></div></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom"><p>&copy; 2026 Siêu Thị Váy Cưới. All Rights Reserved.</p></div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let cartCount = localStorage.getItem('cartCount') ? parseInt(localStorage.getItem('cartCount')) : 0;
+            const badge = document.getElementById('cart-badge');
+            if(badge) badge.textContent = cartCount;
+
+            document.querySelectorAll('.btn-buy, .btn-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cartCount++;
+                    localStorage.setItem('cartCount', cartCount);
+                    if(badge) badge.textContent = cartCount;
+                    alert('Đã thêm mẫu thiết kế này vào giỏ hàng thành công!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
